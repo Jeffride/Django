@@ -1,4 +1,4 @@
 # Django
-Group Project created by [a link](https://github.com/pkia)
-                         [a link](https://github.com/Jeffride)
+Group Project created by [Evan](https://github.com/pkia)
+                         [Jeff](https://github.com/Jeffride)
                          
