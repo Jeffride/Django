@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'firstApp.apps.FirstappConfig',
-    'register.apps.RegisterConfig'
+    'register.apps.RegisterConfig',
+    'crispy_forms'
 
 
 ]
@@ -123,3 +123,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+#default is bootstrap4 but default is bootstrap2 but if you want to use anything else just update this
+CRISPY_TEMPLATE_PACK ="bootstrap4"
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
