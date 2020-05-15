@@ -1,9 +1,17 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
+<link rel="stylesheet" type="text/css" 
+		href="{%static '/css/home.css'%}">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300&display=swap" rel="stylesheet">
 	<title>Homepage</title>
 </head>
 <body>
-Welcome to the Homepage
+<h1>Welcome to the Homepage</h1>
+<ul>
+<a href="/login">Login</a>
+<a href="/register">Register</a>
+</ul>
 </body>
 </html>

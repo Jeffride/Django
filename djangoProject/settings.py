@@ -38,9 +38,10 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'register.apps.RegisterConfig',
-    'crispy_forms'
+    'crispy_forms',
 
-
+    #own_apps
+    'home',
 ]
 
 MIDDLEWARE = [
@@ -129,3 +130,7 @@ CRISPY_TEMPLATE_PACK ="bootstrap4"
 LOGIN_REDIRECT_URL = "/register"
 LOGOUT_REDIRECT_URL = "/"
 REGISTER_REDIRECT_URL = "/"
+
+STATICFILES_DIRS = [
+ "static"
+]
