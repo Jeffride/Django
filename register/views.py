@@ -2,6 +2,8 @@ from django.shortcuts import render
 #Django automates register and login forms : )
 from django.shortcuts import render,redirect
 from .forms import RegisterForm
+from django.urls import reverse_lazy
+from django.http import HttpResponse,HttpResponseNotFound,Http404,HttpResponseRedirect
 # Create your views here.
 
 
@@ -17,8 +19,10 @@ def register(response):
         if form.is_valid():
             form.save()
             #home page when we create one
-        return redirect("login/")
+            success = reverse_lazy('/login/')
+        return HttpResponseRedirect('/login/')
     form = RegisterForm()
     return render(response,"register/register.html",{"form":form})
+
 
 
