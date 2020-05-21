@@ -24,5 +24,8 @@ def register(response):
     form = RegisterForm()
     return render(response,"register/register.html",{"form":form})
 
+def login(response):
+    pass 
+
 
 
