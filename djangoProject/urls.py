@@ -18,12 +18,13 @@ from django.urls import path,include
 #using a variable name in case i import another view on accident
 from register.views import register as r
 from home.views import home_view as h
+from django.contrib.auth import views as auth_views
 
 urlpatterns = [
 
     path('',h ,name="home"),
     path('admin/', admin.site.urls),
     path("register/", r, name="register"),
-    
-
+    path('login/',auth_views.LoginView.as_view(),name = 'login')
+    path('/home',auth_views.)
 ]
