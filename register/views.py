@@ -5,6 +5,11 @@ from .forms import RegisterForm
 from django.urls import reverse_lazy
 from django.http import HttpResponse,HttpResponseNotFound,Http404,HttpResponseRedirect
 # Create your views here.
+from django.utils.decorators import method_decorator
+from django.contrib.auth.decorators import login_required
+from django.views.generic import View
+from home.views import home_view
+
 
 
 
@@ -24,8 +29,14 @@ def register(response):
     form = RegisterForm()
     return render(response,"register/register.html",{"form":form})
 
-def login(response):
-    pass 
+def login(request):
+    template =home_view()
+    context = {}
+
+    # return render(response,"home/home.html")
+    return render(request, template, context)
+
+
 
 
 

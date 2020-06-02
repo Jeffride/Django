@@ -7,5 +7,8 @@ from django.urls import reverse_lazy
 
 
 def home_view(request):
+    template = "home.html"
+    context = {}
+
     #return render(response,"home/home.html")
-    return render(request, "home/home.html")
+    return render(request, template,context)

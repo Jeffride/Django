@@ -127,7 +127,7 @@ STATIC_URL = '/static/'
 
 #default is bootstrap4 but default is bootstrap2 but if you want to use anything else just update this
 CRISPY_TEMPLATE_PACK ="bootstrap4"
-LOGIN_REDIRECT_URL = "/home"
+LOGIN_REDIRECT_URL = "/"
 LOGOUT_REDIRECT_URL = "/"
 REGISTER_REDIRECT_URL = "/"
 LOGIN_URL = '/login'
