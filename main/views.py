@@ -3,12 +3,8 @@ from django.http import HttpResponse
 from django.shortcuts import render,redirect
 from django.http import HttpResponse,HttpResponseNotFound,Http404,HttpResponseRedirect
 from django.urls import reverse_lazy
-# Create your views here.
+from django.contrib.auth.decorators import login_required
 
-
-def home_view(request):
-    template = "home.html"
-    context = {}
-
-    return render(request,"home/home.html")
-    #return render(request, template,context)
+@login_required
+def main_page(request):
+	return render(request,"main/main.html")

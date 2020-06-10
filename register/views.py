@@ -9,8 +9,9 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.decorators import login_required
 from django.views.generic import View
 from home.views import home_view
-
-
+from django.contrib import auth
+from django.contrib.auth import login
+from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 
 
 def register(response):
@@ -29,14 +30,14 @@ def register(response):
     form = RegisterForm()
     return render(response,"register/register.html",{"form":form})
 
-def login(request):
-    template =home_view()
-    context = {}
 
-    # return render(response,"home/home.html")
-    return render(request, template, context)
-
-
-
-
-
+def login_view(request):
+    if request.method == 'POST':
+        form = AuthenticationForm(data=request.POST)
+        if form.is_valid():
+            user = form.get_user()
+            login(request,user)
+            return redirect("/main")
+    else:
+        form = AuthenticationForm()
+    return render(request,'register/login.html',{'form':form})
