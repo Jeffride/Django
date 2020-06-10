@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/3.0/ref/settings/
 """
 
 import os
+#from register.views import login as L
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -127,11 +128,13 @@ STATIC_URL = '/static/'
 
 #default is bootstrap4 but default is bootstrap2 but if you want to use anything else just update this
 CRISPY_TEMPLATE_PACK ="bootstrap4"
-LOGIN_REDIRECT_URL = "/"
-LOGOUT_REDIRECT_URL = "/"
+#LOGIN_REDIRECT_URL = "/hidden"
+#LOGOUT_REDIRECT_URL = ""
 REGISTER_REDIRECT_URL = "/"
 LOGIN_URL = '/login'
 
 STATICFILES_DIRS = [
  "static"
 ]
+APPEND_SLASH = True
+ 

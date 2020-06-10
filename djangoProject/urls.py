@@ -19,10 +19,17 @@ from django.urls import path,include
 from register.views import register as r
 from home.views import home_view as h
 from django.contrib.auth import views as auth_views
-urlpatterns = [
+from main.views import main_page as main
+from register.views import login_view as l
 
+# Uncomment the next two lines to enable the admin:
+from django.contrib import admin
+admin.autodiscover()
+urlpatterns = [
     path('',h ,name="home"),
     path('admin/', admin.site.urls),
     path("register/", r, name="register"),
-    path('login/',auth_views.LoginView.as_view(),name = 'login')
+    path('login/',l,name = 'login'),
+    path('main/',main, name="hidden"),
+    #path('hidden/', l, name="hidden")
 ]
